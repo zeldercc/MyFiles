@@ -1,5 +1,8 @@
 # Clash Mi Android YAML 自定义分流覆写。
 # 数组的追加或替换行为尚未实测，请检查最终规则及基础策略组是否保留。
+dns:
+  enable: true
+  enhanced-mode: fake-ip
 rule-providers:
   Nvidia:
     type: http

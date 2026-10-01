@@ -1,6 +1,6 @@
 // iOS Clash（Hako）JavaScript 分流覆写。
 // 根据 stash-routing-overwrite.yaml 转换，保留 ApplePushFallback。
-// 保留订阅的 DNS、节点、兜底规则和其他设置。
+// 启用 DNS 和 Fake-IP，保留订阅其他 DNS 字段、节点和兜底规则。
 // 官方入口：main(config)。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -214,5 +214,9 @@ function main(config) {
   config.rules = routing.rules.concat(baseRules.filter(function (rule) {
     return routing.rules.indexOf(rule) < 0;
   }));
+  config.dns = Object.assign({}, config.dns || {}, {
+    enable: true,
+    "enhanced-mode": "fake-ip"
+  });
   return config;
 }

@@ -1,0 +1,105 @@
+{
+  "reviewed_at": "2026-10-02",
+  "versions": {
+    "OpenClash": {
+      "version_kind": "github_release",
+      "version_url": "https://api.github.com/repos/vernesong/OpenClash/releases/latest",
+      "reviewed_version": "v0.47.156",
+      "release_url": "https://github.com/vernesong/OpenClash/releases/tag/v0.47.156"
+    },
+    "ClashMi": {
+      "version_kind": "github_release",
+      "version_url": "https://api.github.com/repos/KaringX/clashmi/releases/latest",
+      "reviewed_version": "v1.0.30.1605",
+      "release_url": "https://github.com/KaringX/clashmi/releases/tag/v1.0.30.1605"
+    },
+    "Mihomo": {
+      "version_kind": "github_release",
+      "version_url": "https://api.github.com/repos/MetaCubeX/mihomo/releases/latest",
+      "reviewed_version": "v1.19.32",
+      "release_url": "https://github.com/MetaCubeX/mihomo/releases/tag/v1.19.32"
+    },
+    "Stash": {
+      "version_kind": "apple",
+      "version_url": "https://itunes.apple.com/lookup?id=1596063349&country=tw",
+      "reviewed_version": "3.4.1",
+      "release_url": "https://apps.apple.com/tw/app/stash/id1596063349"
+    }
+  },
+  "normative_sources": [
+    {
+      "name": "OpenClash 解析实现",
+      "url": "https://raw.githubusercontent.com/vernesong/OpenClash/v0.47.156/luci-app-openclash/root/usr/share/openclash/YAML.rb",
+      "mode": "bytes",
+      "sha256": "d9c0934a166c711dbd9707fe06af2ee191b9efe86c12fca9cf223ce4c5b087da"
+    },
+    {
+      "name": "OpenClash 模块入口",
+      "url": "https://raw.githubusercontent.com/vernesong/OpenClash/v0.47.156/luci-app-openclash/root/etc/init.d/openclash",
+      "mode": "bytes",
+      "sha256": "315d674bf3e29ea60bf4b15cb313b35c5689fe14596ed9f3e985620223bddff4"
+    },
+    {
+      "name": "Clash Mi YAML 导入实现",
+      "url": "https://raw.githubusercontent.com/KaringX/clashmi/v1.0.30.1605/lib/app/modules/profile_patch_manager.dart",
+      "mode": "bytes",
+      "sha256": "002796cd2d1f5044386639f8583e45870a66751ef6a07997d48cf4762ac2ca0c"
+    },
+    {
+      "name": "Clash Mi 官方覆写说明",
+      "url": "https://clashmi.app/guide/faq",
+      "mode": "visible_text",
+      "sha256": "63c16667b2369a4d14da49ca9eea3c45178636289133e50aacb27150f50a4ea5"
+    },
+    {
+      "name": "Stash 官方覆写规范",
+      "url": "https://stash.wiki/en/configuration/override",
+      "mode": "visible_text",
+      "sha256": "233f3d7e1f2e9ed99d95ee2f29f4744f45954c1ef41a4899f90214e915978ab5"
+    },
+    {
+      "name": "Stash 官方规则类型",
+      "url": "https://stash.wiki/en/rules/rule-types",
+      "mode": "visible_text",
+      "sha256": "bc1eb1b18d736670cd3c00b943c103320c3625ca572f4597acad3a2aa0e19fd2"
+    },
+    {
+      "name": "Stash 官方规则集",
+      "url": "https://stash.wiki/en/rules/rule-set",
+      "mode": "visible_text",
+      "sha256": "d76b5bc4a76c1ea765c83bd1cf86eb24f1f49b1b402dfc791ac47cb60599e847"
+    },
+    {
+      "name": "Hako JS 引擎当前源码",
+      "url": "https://raw.githubusercontent.com/TokenPLS/Hako-Client/main/apple/HakoClient/Sources/ConfigUI/ScriptEngine.swift",
+      "mode": "bytes",
+      "sha256": "99e4f7327dfb12485bbe1bfc23e8798bf3169e5d10c6e7be384b06db376626f7"
+    }
+  ],
+  "native_acceptance": {
+    "clash": {
+      "accepted": false,
+      "app_version": "",
+      "evidence_file": "",
+      "reason": "等待真实客户端导入、更新、增删及固定 URL 实测"
+    },
+    "openclash": {
+      "accepted": false,
+      "app_version": "",
+      "evidence_file": "",
+      "reason": "等待真实客户端导入、更新、增删及固定 URL 实测"
+    },
+    "clashmi": {
+      "accepted": false,
+      "app_version": "",
+      "evidence_file": "",
+      "reason": "等待真实客户端导入、更新、增删及固定 URL 实测"
+    },
+    "stash": {
+      "accepted": false,
+      "app_version": "",
+      "evidence_file": "",
+      "reason": "等待真实客户端导入、更新、增删及固定 URL 实测"
+    }
+  }
+}

@@ -1,0 +1,430 @@
+# 日常只修改本文件。rules 列表顺序就是匹配顺序。
+# 删除规则请删除完整条目；删除服务规则会自动清理未使用的 provider。
+schema_version: 1
+targets:
+  direct: DIRECT
+  reject: REJECT
+  us: 🇺🇲 美国节点
+  jp: 🇯🇵 日本节点
+  hk: 🇭🇰 香港节点
+  game: 🎮 游戏平台
+  apple_push: ApplePushFallback
+providers:
+  Nvidia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nvidia/Nvidia.yaml
+    path: ./rule_provider/Nvidia.yaml
+    interval: 86400
+  GoogleVoice:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml
+    path: ./ruleset/GoogleVoice.yaml
+    interval: 86400
+  Twitch:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitch/Twitch.yaml
+    path: ./ruleset/Twitch.yaml
+    interval: 86400
+  Niconico:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Niconico/Niconico.yaml
+    path: ./ruleset/Niconico.yaml
+    interval: 86400
+  TikTok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    path: ./ruleset/TikTok.yaml
+    interval: 86400
+  Reddit:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Reddit/Reddit.yaml
+    path: ./ruleset/Reddit.yaml
+    interval: 86400
+  Amazon:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
+    path: ./ruleset/Amazon.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+    path: ./ruleset/Steam.yaml
+    interval: 86400
+  PlayStation:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PlayStation/PlayStation.yaml
+    path: ./ruleset/PlayStation.yaml
+    interval: 86400
+  DouYin:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DouYin/DouYin.yaml
+    path: ./ruleset/DouYin.yaml
+    interval: 86400
+  XiaoHongShu:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoHongShu/XiaoHongShu.yaml
+    path: ./ruleset/XiaoHongShu.yaml
+    interval: 86400
+  BiliBili:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml
+    path: ./ruleset/BiliBili.yaml
+    interval: 86400
+  Bing:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    path: ./ruleset/Bing.yaml
+    interval: 86400
+  Porn:
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list
+    path: ./rule_provider/Porn.yaml
+    interval: 86400
+  Instagram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
+    path: ./ruleset/Instagram.yaml
+    interval: 86400
+groups:
+- name: ApplePushFallback
+  type: fallback
+  targets:
+  - jp
+  - direct
+  url: http://www.apple.com/library/test/success.html
+  interval: 300
+  platforms:
+  - clash
+  - openclash
+  - stash
+rules:
+- id: rule_001
+  type: DOMAIN
+  value: stun6.chat.bilibili.com
+  target: reject
+- id: rule_002
+  type: IP-CIDR
+  value: 192.168.18.0/24
+  target: direct
+  no_resolve: true
+- id: rule_003
+  type: IP-CIDR
+  value: 127.0.0.0/8
+  target: direct
+  no_resolve: true
+- id: rule_004
+  type: IP-CIDR
+  value: 10.0.0.0/8
+  target: direct
+  no_resolve: true
+- id: rule_005
+  type: IP-CIDR
+  value: 172.16.0.0/12
+  target: direct
+  no_resolve: true
+- id: rule_006
+  type: DOMAIN-KEYWORD
+  value: hosthatch
+  target: direct
+- id: rule_007
+  type: DOMAIN-KEYWORD
+  value: vultr
+  target: direct
+- id: rule_008
+  type: RULE-SET
+  value: Nvidia
+  target: us
+- id: rule_009
+  type: RULE-SET
+  value: GoogleVoice
+  target: us
+- id: rule_010
+  type: RULE-SET
+  value: Twitch
+  target: jp
+- id: rule_011
+  type: RULE-SET
+  value: Niconico
+  target: jp
+- id: rule_012
+  type: RULE-SET
+  value: TikTok
+  target: jp
+- id: rule_013
+  type: RULE-SET
+  value: Reddit
+  target: jp
+- id: rule_014
+  type: RULE-SET
+  value: Amazon
+  target: jp
+- id: rule_015
+  type: RULE-SET
+  value: Steam
+  target: hk
+- id: rule_016
+  type: RULE-SET
+  value: PlayStation
+  target: hk
+- id: rule_017
+  type: RULE-SET
+  value: DouYin
+  target: direct
+- id: rule_018
+  type: RULE-SET
+  value: XiaoHongShu
+  target: direct
+- id: rule_019
+  type: RULE-SET
+  value: BiliBili
+  target: direct
+- id: rule_020
+  type: RULE-SET
+  value: Bing
+  target: us
+- id: rule_021
+  type: RULE-SET
+  value: Porn
+  target: us
+- id: rule_022
+  type: RULE-SET
+  value: Instagram
+  target: jp
+- id: rule_023
+  type: DOMAIN-KEYWORD
+  value: weixin
+  target: direct
+- id: rule_024
+  type: DOMAIN-SUFFIX
+  value: api.wcc.best
+  target: jp
+- id: rule_025
+  type: DOMAIN-SUFFIX
+  value: sub.xeton.dev
+  target: jp
+- id: rule_026
+  type: DOMAIN-KEYWORD
+  value: ubisoft
+  target: game
+- id: rule_027
+  type: DOMAIN-SUFFIX
+  value: amazon.co.jp
+  target: jp
+- id: rule_028
+  type: DOMAIN-SUFFIX
+  value: ssl-images-amazon.com
+  target: jp
+- id: rule_029
+  type: DOMAIN-SUFFIX
+  value: images-na.ssl-images-amazon.com
+  target: jp
+- id: rule_030
+  type: DOMAIN-SUFFIX
+  value: m.media-amazon.com
+  target: jp
+- id: rule_031
+  type: DOMAIN-SUFFIX
+  value: amazon.com
+  target: jp
+- id: rule_032
+  type: DOMAIN-KEYWORD
+  value: afdian
+  target: jp
+- id: rule_033
+  type: DOMAIN-KEYWORD
+  value: tomplay
+  target: jp
+- id: rule_034
+  type: DOMAIN-KEYWORD
+  value: deepl
+  target: jp
+- id: rule_035
+  type: DOMAIN-KEYWORD
+  value: yousician
+  target: direct
+- id: rule_036
+  type: DOMAIN-SUFFIX
+  value: api.deepseek.com
+  target: direct
+- id: rule_037
+  type: DOMAIN-KEYWORD
+  value: javdb
+  target: us
+- id: rule_038
+  type: DOMAIN-KEYWORD
+  value: perplexity
+  target: jp
+- id: rule_039
+  type: DOMAIN-SUFFIX
+  value: battlenet.com.cn
+  target: direct
+- id: rule_040
+  type: DOMAIN-KEYWORD
+  value: muse
+  target: jp
+- id: rule_041
+  type: DOMAIN
+  value: identity.apple.com
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_042
+  type: DOMAIN-SUFFIX
+  value: akadns.net
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_043
+  type: DOMAIN-SUFFIX
+  value: push.apple.com
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_044
+  type: DOMAIN-KEYWORD
+  value: apple.com.edgekey.net
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_045
+  type: DOMAIN-SUFFIX
+  value: gateway.push.apple.com
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_046
+  type: DOMAIN-SUFFIX
+  value: api.push.apple.com
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_047
+  type: DOMAIN-SUFFIX
+  value: sandbox.push.apple.com
+  target: apple_push
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_048
+  type: IP-CIDR
+  value: 17.188.128.0/18
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_049
+  type: IP-CIDR
+  value: 17.188.20.0/23
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_050
+  type: IP-CIDR
+  value: 17.249.0.0/16
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_051
+  type: IP-CIDR
+  value: 17.252.0.0/16
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_052
+  type: IP-CIDR
+  value: 17.57.144.0/22
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_053
+  type: IP-CIDR
+  value: 2403:300:a42::/48
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_054
+  type: IP-CIDR
+  value: 2403:300:a51::/48
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_055
+  type: IP-CIDR
+  value: 2620:149:a44::/48
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+- id: rule_056
+  type: IP-CIDR
+  value: 2a01:b740:a42::/48
+  target: apple_push
+  no_resolve: true
+  platforms:
+  - clash
+  - openclash
+  - stash
+platforms:
+  clash:
+    dns:
+      enable: true
+      enhanced-mode: fake-ip
+  openclash: {}
+  clashmi:
+    dns:
+      enable: true
+      enhanced-mode: fake-ip
+  stash: {}
+managed_targets:
+- apple_push

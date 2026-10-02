@@ -101,5 +101,11 @@
       "evidence_file": "",
       "reason": "等待真实客户端导入、更新、增删及固定 URL 实测"
     }
+  },
+  "publication_policy": {
+    "mode": "automated_checks_only",
+    "native_tests_skipped_by_user": true,
+    "reason": "用户在当前会话明确要求：跳过测试步骤。跳过客户端实测，保留全部自动校验。",
+    "recorded_at": "2026-10-02"
   }
 }

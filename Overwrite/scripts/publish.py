@@ -15,7 +15,7 @@ def git(*args):
 def main():
     from check_upstream import publication_problems
     registry = json.loads((ROOT / 'Overwrite/compatibility/verified.json').read_text())
-    if publication_problems(registry): raise ValueError('未完成原生验收，不发布')
+    if publication_problems(registry): raise ValueError('发布策略检查未通过，不发布')
     expected = render(load((ROOT / 'Overwrite/source/routing.yaml').read_text()))
     for name, content in expected.items():
         if (ROOT / '.build/Overwrite' / name).read_text() != content:

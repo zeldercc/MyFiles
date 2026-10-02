@@ -82,6 +82,15 @@ def check(registry):
 
 
 def publication_problems(registry):
+    policy = registry.get("publication_policy", {"mode": "native_required"})
+    if policy.get("mode") == "automated_checks_only":
+        if policy.get("native_tests_skipped_by_user") is not True or not policy.get("reason"):
+            return ["跳过原生实测的发布策略缺少明确记录"]
+        # This waives only native acceptance. Latest normative checks, unit
+        # tests and kernel parsing remain mandatory workflow steps.
+        return []
+    if policy.get("mode") != "native_required":
+        return ["未知发布策略，停止发布"]
     problems = []
     for platform in ("clash", "openclash", "clashmi", "stash"):
         item = registry["native_acceptance"][platform]
@@ -121,7 +130,11 @@ def main():
         problems = publication_problems(registry)
         if problems:
             print("正式发布尚未启用：\n" + "\n".join(problems)); raise SystemExit(2)
-        print("四端原生验收记录通过"); return
+        if registry.get("publication_policy", {}).get("mode") == "automated_checks_only":
+            print("用户要求跳过原生实测；允许在自动校验全部通过后发布。原生实测状态仍为未验证。")
+        else:
+            print("四端原生验收记录通过")
+        return
     result = check(registry)
     out = ROOT / ".build/upstream-report.json"; out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

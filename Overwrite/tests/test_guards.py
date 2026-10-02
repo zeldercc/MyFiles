@@ -15,6 +15,21 @@ import check_upstream
 class GuardTests(unittest.TestCase):
     def setUp(self):
         self.registry = json.loads((ROOT / 'Overwrite/compatibility/verified.json').read_text())
+        self.registry['publication_policy'] = {'mode': 'native_required'}
+
+    def test_explicit_user_skip_allows_auto_checked_publication(self):
+        self.registry['publication_policy'] = {'mode': 'automated_checks_only', 'native_tests_skipped_by_user': True, 'reason': '用户明确要求跳过测试步骤'}
+        self.assertEqual(check_upstream.publication_problems(self.registry), [])
+        self.assertTrue(all(item['accepted'] is False for item in self.registry['native_acceptance'].values()))
+
+    def test_incomplete_skip_record_rejected(self):
+        self.registry['publication_policy'] = {'mode': 'automated_checks_only'}
+        self.assertTrue(check_upstream.publication_problems(self.registry))
+
+    def test_user_skip_does_not_waive_upstream_version_check(self):
+        self.registry['publication_policy'] = {'mode': 'automated_checks_only', 'native_tests_skipped_by_user': True, 'reason': 'user requested'}
+        with patch.object(check_upstream, 'latest', return_value='unreviewed-version'):
+            with self.assertRaises(ValueError): check_upstream.check(self.registry)
 
     def test_new_upstream_version_blocks(self):
         with patch.object(check_upstream, 'latest', return_value='unreviewed-version'):

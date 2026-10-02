@@ -2,11 +2,11 @@
 
 日常只编辑 `Overwrite/source/routing.yaml`。四个正式输出的文件名和路径保持不变。
 
-当前交付状态：本地生成、自动校验及 GitHub Actions 工作流已准备；未在 GitHub 运行。四端原生客户端验收尚未完成，因此工作流先生成候选附件，不覆盖正式输出。
+当前状态：首次 GitHub Actions 自动生成及校验成功。用户明确要求跳过客户端实测，发布策略为 automated_checks_only。上传本次更新后，工作流在全部自动校验通过时更新四份正式输出。四端原生实测状态仍为未验证。
 
 ## 自动流程
 
-源文件提交到 main 后，工作流先查询官方最新版本及规范指纹，再运行增删测试、生成四份候选、下载公开规则集，使用官方 Mihomo 核心检查。所有检查成功后保存候选附件。只有四端原生验收记录完整时，才将四份正式输出作为一个提交发布。
+源文件提交到 main 后，工作流先查询官方最新版本及规范指纹，再运行增删测试、生成四份候选、下载公开规则集，使用官方 Mihomo 核心检查。所有检查成功后保存候选附件。当前按用户指定策略跳过原生实测门槛，全部自动校验成功后将四份正式输出作为一个提交发布。
 
 上游版本变化、文档或解析代码指纹变化、查询失败、源文件错误、规则集下载失败、核心检查失败都会停止本次生成或发布，保留原正式输出。
 
@@ -53,13 +53,13 @@ https://raw.githubusercontent.com/zeldercc/MyFiles/main/Overwrite/stash-routing-
 - Clash Mi 候选仅验证 YAML 和核心语法，实际数组合并由其服务层处理，尚未确认。
 - Mihomo 检查不能代表 Stash 或 Hako 原生内核检查通过。
 
-## 正式发布验收
+## 发布策略与原生实测记录
 
-`compatibility/verified.json` 的 `native_acceptance` 初始为 false。不得直接改成 true 来跳过验收。
+`compatibility/verified.json` 的 native_acceptance 保持 false。publication_policy 单独记录用户要求的跳过实测策略，不将未完成实测标记为通过。下列原生验收记录仅在以后切换回 native_required 策略时作为发布门槛。
 
 需记录每端版本、导入、更新、新增、修改、删除、删空、基础订阅保留及固定 URL 成功的真实结果。验收证据以 JSON 保存在 `Overwrite/compatibility/evidence/`，包含 `app_version`、`tested_at`、`checks` 和具体 `evidence` 列表。还需确认 Clash 对应应用并添加其官方最新版本查询入口。版本与已核查规范不同，验收不能用于开启发布。
 
-Stash 文档规定 `.stoverride`，本项目按用户要求保留 `.yaml` 文件名。必须实测所用远程导入及更新入口是否接受此固定地址。
+Stash 文档规定 `.stoverride`，本项目按用户要求保留 `.yaml` 文件名。用户已要求跳过原生实测，该固定 .yaml 地址在对应客户端的导入和更新兼容性仍为未验证。
 
 ## 本地检查
 
@@ -72,7 +72,7 @@ python Overwrite/scripts/verify_core.py
 python Overwrite/scripts/check_upstream.py --publication-check
 ```
 
-最后一条在原生验收未完成时返回 2，表示正式发布尚未启用。生成默认写入 `.build/Overwrite`，不会覆盖现有四份文件。
+最后一条在 native_required 策略且实测未完成时返回 2；当前 automated_checks_only 策略返回 0，并明确记录原生实测未验证。生成默认写入 `.build/Overwrite`，不会覆盖现有四份文件。
 
 ## 来源
 

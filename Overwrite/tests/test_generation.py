@@ -147,6 +147,7 @@ class GenerationTests(unittest.TestCase):
 
     def test_publication_requires_native_acceptance(self):
         registry = json.loads((ROOT / 'Overwrite/compatibility/verified.json').read_text())
+        registry['publication_policy'] = {'mode': 'native_required'}
         for item in registry['native_acceptance'].values(): item['accepted'] = False
         self.assertGreaterEqual(len(publication_problems(registry)), 4)
 

@@ -101,19 +101,12 @@ providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
     path: ./ruleset/Instagram.yaml
     interval: 86400
-  GoogleDrive:
+  Google:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml
-    path: ./ruleset/GoogleDrive.yaml
-    interval: 86400
-  GoogleSearch:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleSearch/GoogleSearch.yaml
-    path: ./ruleset/GoogleSearch.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    path: ./ruleset/Google.yaml
     interval: 86400
 groups:
 - name: ApplePushFallback
@@ -128,17 +121,13 @@ groups:
   - openclash
   - stash
 rules:
-- id: antigravity_google_jp
-  type: DOMAIN-SUFFIX
-  value: antigravity.google
-  target: jp
-- id: google_drive_jp
+- id: rule_009
   type: RULE-SET
-  value: GoogleDrive
-  target: jp
-- id: google_search_jp
+  value: GoogleVoice
+  target: us
+- id: google_jp
   type: RULE-SET
-  value: GoogleSearch
+  value: Google
   target: jp
 - id: rule_001
   type: DOMAIN
@@ -175,10 +164,6 @@ rules:
 - id: rule_008
   type: RULE-SET
   value: Nvidia
-  target: us
-- id: rule_009
-  type: RULE-SET
-  value: GoogleVoice
   target: us
 - id: rule_010
   type: RULE-SET

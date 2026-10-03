@@ -1,4 +1,4 @@
-// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 7ff17f5999738f8a8e2f13d7f8ca53b768106c5f14fc918b7745eb77af5034ae
+// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: e0fc83bee2e1a0a5fb60cf931de4e3299f3149ca65968c29a08a40e9308ca740
 // 每次从原始订阅应用；不要将旧运行配置作为输入。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -111,9 +111,28 @@ function main(config) {
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml",
       "path": "./ruleset/Instagram.yaml",
       "interval": 86400
+    },
+    "GoogleDrive": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml",
+      "path": "./ruleset/GoogleDrive.yaml",
+      "interval": 86400
+    },
+    "GoogleSearch": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleSearch/GoogleSearch.yaml",
+      "path": "./ruleset/GoogleSearch.yaml",
+      "interval": 86400
     }
   },
   "rules": [
+    "DOMAIN-SUFFIX,antigravity.google,🇯🇵 日本节点",
+    "RULE-SET,GoogleDrive,🇯🇵 日本节点",
+    "RULE-SET,GoogleSearch,🇯🇵 日本节点",
     "DOMAIN,stun6.chat.bilibili.com,REJECT",
     "IP-CIDR,192.168.18.0/24,DIRECT,no-resolve",
     "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",

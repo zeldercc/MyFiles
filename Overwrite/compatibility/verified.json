@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-10-02",
+  "reviewed_at": "2026-10-11",
   "versions": {
     "OpenClash": {
       "version_kind": "github_release",
@@ -22,7 +22,7 @@
     "Stash": {
       "version_kind": "apple",
       "version_url": "https://itunes.apple.com/lookup?id=1596063349&country=tw",
-      "reviewed_version": "3.4.1",
+      "reviewed_version": "3.6.1",
       "release_url": "https://apps.apple.com/tw/app/stash/id1596063349"
     }
   },
@@ -55,19 +55,19 @@
       "name": "Stash 官方覆写规范",
       "url": "https://stash.wiki/en/configuration/override",
       "mode": "visible_text",
-      "sha256": "233f3d7e1f2e9ed99d95ee2f29f4744f45954c1ef41a4899f90214e915978ab5"
+      "sha256": "550153bd431654bc5e8035185afb8a56328e993bde58388ccbd682196eb6f75f"
     },
     {
       "name": "Stash 官方规则类型",
       "url": "https://stash.wiki/en/rules/rule-types",
       "mode": "visible_text",
-      "sha256": "bc1eb1b18d736670cd3c00b943c103320c3625ca572f4597acad3a2aa0e19fd2"
+      "sha256": "8d6c4b049604d796ed235960b7c0f992411f041ab8e10bbda17bd145e410261f"
     },
     {
       "name": "Stash 官方规则集",
       "url": "https://stash.wiki/en/rules/rule-set",
       "mode": "visible_text",
-      "sha256": "d76b5bc4a76c1ea765c83bd1cf86eb24f1f49b1b402dfc791ac47cb60599e847"
+      "sha256": "5d616ef14d6665f5ba8b3ec598f761e8acfd55802933765c84418620fda63478"
     },
     {
       "name": "Hako JS 引擎当前源码",

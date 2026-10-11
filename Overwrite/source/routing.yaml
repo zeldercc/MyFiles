@@ -288,7 +288,7 @@ rules:
 - id: rule_040
   type: DOMAIN-KEYWORD
   value: muse
-  target: jp
+  target: us
 - id: rule_041
   type: DOMAIN
   value: identity.apple.com

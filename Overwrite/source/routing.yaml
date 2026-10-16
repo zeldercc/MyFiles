@@ -7,6 +7,7 @@ targets:
   us: 🇺🇲 美国节点
   jp: 🇯🇵 日本节点
   hk: 🇭🇰 香港节点
+  kr: 🇰🇷 韩国节点
   game: 🎮 游戏平台
   apple_push: ApplePushFallback
 providers:
@@ -289,6 +290,10 @@ rules:
   type: DOMAIN-KEYWORD
   value: muse
   target: us
+- id: sooplive_kr
+  type: DOMAIN-KEYWORD
+  value: sooplive
+  target: kr
 - id: rule_041
   type: DOMAIN
   value: identity.apple.com

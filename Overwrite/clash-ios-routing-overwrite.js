@@ -1,4 +1,4 @@
-// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 41817ac26cfa1d9afe7ab6dbeb8ce998c071dc8a326bce27cd81b3807e84670f
+// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 4bc89d7c5f0850af2c5d25407ca71d69a4c4bb9549dc4729ead5d7bca1fc5acc
 // 每次从原始订阅应用；不要将旧运行配置作为输入。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -163,6 +163,7 @@ function main(config) {
     "DOMAIN-KEYWORD,perplexity,🇯🇵 日本节点",
     "DOMAIN-SUFFIX,battlenet.com.cn,DIRECT",
     "DOMAIN-KEYWORD,muse,🇺🇲 美国节点",
+    "DOMAIN-KEYWORD,sooplive,🇰🇷 韩国节点",
     "DOMAIN,identity.apple.com,ApplePushFallback",
     "DOMAIN-SUFFIX,akadns.net,ApplePushFallback",
     "DOMAIN-SUFFIX,push.apple.com,ApplePushFallback",

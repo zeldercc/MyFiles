@@ -8,6 +8,7 @@ targets:
   jp: 🇯🇵 日本节点
   hk: 🇭🇰 香港节点
   kr: 🇰🇷 韩国节点
+  tw: 🇨🇳 台湾节点
   game: 🎮 游戏平台
   apple_push: ApplePushFallback
 providers:
@@ -122,6 +123,14 @@ groups:
   - openclash
   - stash
 rules:
+- id: comic18_tw
+  type: DOMAIN-KEYWORD
+  value: 18comic
+  target: tw
+- id: jmcomic_tw
+  type: DOMAIN-KEYWORD
+  value: jmcomic
+  target: tw
 - id: rule_009
   type: RULE-SET
   value: GoogleVoice

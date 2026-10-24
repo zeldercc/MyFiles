@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-10-16",
+  "reviewed_at": "2026-10-24",
   "versions": {
     "OpenClash": {
       "version_kind": "github_release",
@@ -16,13 +16,13 @@
     "Mihomo": {
       "version_kind": "github_release",
       "version_url": "https://api.github.com/repos/MetaCubeX/mihomo/releases/latest",
-      "reviewed_version": "v1.19.32",
-      "release_url": "https://github.com/MetaCubeX/mihomo/releases/tag/v1.19.32"
+      "reviewed_version": "v1.19.33",
+      "release_url": "https://github.com/MetaCubeX/mihomo/releases/tag/v1.19.33"
     },
     "Stash": {
       "version_kind": "apple",
       "version_url": "https://itunes.apple.com/lookup?id=1596063349&country=tw",
-      "reviewed_version": "3.6.3",
+      "reviewed_version": "3.6.5",
       "release_url": "https://apps.apple.com/tw/app/stash/id1596063349"
     }
   },

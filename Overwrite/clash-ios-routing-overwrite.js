@@ -1,4 +1,4 @@
-// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 4bc89d7c5f0850af2c5d25407ca71d69a4c4bb9549dc4729ead5d7bca1fc5acc
+// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 13c34776320eb8283b45adc2f72bd4464212ef98b89140162ebe96fbf02b4d50
 // 每次从原始订阅应用；不要将旧运行配置作为输入。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -122,6 +122,8 @@ function main(config) {
     }
   },
   "rules": [
+    "DOMAIN-KEYWORD,18comic,🇨🇳 台湾节点",
+    "DOMAIN-KEYWORD,jmcomic,🇨🇳 台湾节点",
     "RULE-SET,GoogleVoice,🇺🇲 美国节点",
     "RULE-SET,Google,🇯🇵 日本节点",
     "DOMAIN,stun6.chat.bilibili.com,REJECT",

@@ -42,6 +42,14 @@
       ]
     },
     {
+      "name": "🇨🇳 台湾节点",
+      "type": "select",
+      "proxies": [
+        "TestNode",
+        "DIRECT"
+      ]
+    },
+    {
       "name": "🎮 游戏平台",
       "type": "select",
       "proxies": [

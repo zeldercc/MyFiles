@@ -1,4 +1,4 @@
-// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 247c962ed3d9320956011b639443ef6767194d850ebb6a4e26b566cf479dd9c3
+// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 79e37d61371b5c7d54a20dc92f5088d31634a48b56a71efd439d00031d8e6030
 // 每次从原始订阅应用；不要将旧运行配置作为输入。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -162,16 +162,11 @@ function main(config) {
     "RULE-SET,BiliBili,DIRECT",
     "RULE-SET,Bing,🇺🇲 美国节点",
     "RULE-SET,Porn,🇺🇲 美国节点",
-    "RULE-SET,Instagram,🇯🇵 日本节点",
+    "RULE-SET,Instagram,🇺🇲 美国节点",
     "DOMAIN-KEYWORD,weixin,DIRECT",
     "DOMAIN-SUFFIX,api.wcc.best,🇯🇵 日本节点",
     "DOMAIN-SUFFIX,sub.xeton.dev,🇯🇵 日本节点",
     "DOMAIN-KEYWORD,ubisoft,🎮 游戏平台",
-    "DOMAIN-SUFFIX,amazon.co.jp,🇯🇵 日本节点",
-    "DOMAIN-SUFFIX,ssl-images-amazon.com,🇯🇵 日本节点",
-    "DOMAIN-SUFFIX,images-na.ssl-images-amazon.com,🇯🇵 日本节点",
-    "DOMAIN-SUFFIX,m.media-amazon.com,🇯🇵 日本节点",
-    "DOMAIN-SUFFIX,amazon.com,🇯🇵 日本节点",
     "DOMAIN-KEYWORD,afdian,🇯🇵 日本节点",
     "DOMAIN-KEYWORD,tomplay,🇯🇵 日本节点",
     "DOMAIN-KEYWORD,deepl,🇯🇵 日本节点",
@@ -185,9 +180,6 @@ function main(config) {
     "DOMAIN-SUFFIX,akadns.net,ApplePushFallback",
     "DOMAIN-SUFFIX,push.apple.com,ApplePushFallback",
     "DOMAIN-KEYWORD,apple.com.edgekey.net,ApplePushFallback",
-    "DOMAIN-SUFFIX,gateway.push.apple.com,ApplePushFallback",
-    "DOMAIN-SUFFIX,api.push.apple.com,ApplePushFallback",
-    "DOMAIN-SUFFIX,sandbox.push.apple.com,ApplePushFallback",
     "IP-CIDR,17.188.128.0/18,ApplePushFallback,no-resolve",
     "IP-CIDR,17.188.20.0/23,ApplePushFallback,no-resolve",
     "IP-CIDR,17.249.0.0/16,ApplePushFallback,no-resolve",

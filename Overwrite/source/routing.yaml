@@ -240,7 +240,7 @@ rules:
 - id: rule_022
   type: RULE-SET
   value: Instagram
-  target: jp
+  target: us
 - id: rule_023
   type: DOMAIN-KEYWORD
   value: weixin
@@ -257,26 +257,6 @@ rules:
   type: DOMAIN-KEYWORD
   value: ubisoft
   target: game
-- id: rule_027
-  type: DOMAIN-SUFFIX
-  value: amazon.co.jp
-  target: jp
-- id: rule_028
-  type: DOMAIN-SUFFIX
-  value: ssl-images-amazon.com
-  target: jp
-- id: rule_029
-  type: DOMAIN-SUFFIX
-  value: images-na.ssl-images-amazon.com
-  target: jp
-- id: rule_030
-  type: DOMAIN-SUFFIX
-  value: m.media-amazon.com
-  target: jp
-- id: rule_031
-  type: DOMAIN-SUFFIX
-  value: amazon.com
-  target: jp
 - id: rule_032
   type: DOMAIN-KEYWORD
   value: afdian
@@ -340,30 +320,6 @@ rules:
 - id: rule_044
   type: DOMAIN-KEYWORD
   value: apple.com.edgekey.net
-  target: apple_push
-  platforms:
-  - clash
-  - openclash
-  - stash
-- id: rule_045
-  type: DOMAIN-SUFFIX
-  value: gateway.push.apple.com
-  target: apple_push
-  platforms:
-  - clash
-  - openclash
-  - stash
-- id: rule_046
-  type: DOMAIN-SUFFIX
-  value: api.push.apple.com
-  target: apple_push
-  platforms:
-  - clash
-  - openclash
-  - stash
-- id: rule_047
-  type: DOMAIN-SUFFIX
-  value: sandbox.push.apple.com
   target: apple_push
   platforms:
   - clash

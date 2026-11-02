@@ -1,4 +1,4 @@
-// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 13c34776320eb8283b45adc2f72bd4464212ef98b89140162ebe96fbf02b4d50
+// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 247c962ed3d9320956011b639443ef6767194d850ebb6a4e26b566cf479dd9c3
 // 每次从原始订阅应用；不要将旧运行配置作为输入。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -6,6 +6,22 @@ function main(config) {
   }
   var routing = {
   "rule-providers": {
+    "Meta": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "yaml",
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/classical/meta.yaml",
+      "path": "./ruleset/Meta.yaml",
+      "interval": 86400
+    },
+    "Comic18": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "yaml",
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/classical/18comic.yaml",
+      "path": "./ruleset/Comic18.yaml",
+      "interval": 86400
+    },
     "Nvidia": {
       "type": "http",
       "behavior": "classical",
@@ -122,8 +138,8 @@ function main(config) {
     }
   },
   "rules": [
-    "DOMAIN-KEYWORD,18comic,🇨🇳 台湾节点",
-    "DOMAIN-KEYWORD,jmcomic,🇨🇳 台湾节点",
+    "RULE-SET,Comic18,🇨🇳 台湾节点",
+    "RULE-SET,Meta,🇺🇲 美国节点",
     "RULE-SET,GoogleVoice,🇺🇲 美国节点",
     "RULE-SET,Google,🇯🇵 日本节点",
     "DOMAIN,stun6.chat.bilibili.com,REJECT",
@@ -164,7 +180,6 @@ function main(config) {
     "DOMAIN-KEYWORD,javdb,🇺🇲 美国节点",
     "DOMAIN-KEYWORD,perplexity,🇯🇵 日本节点",
     "DOMAIN-SUFFIX,battlenet.com.cn,DIRECT",
-    "DOMAIN-KEYWORD,muse,🇺🇲 美国节点",
     "DOMAIN-KEYWORD,sooplive,🇰🇷 韩国节点",
     "DOMAIN,identity.apple.com,ApplePushFallback",
     "DOMAIN-SUFFIX,akadns.net,ApplePushFallback",

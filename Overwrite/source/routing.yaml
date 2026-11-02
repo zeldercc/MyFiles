@@ -12,6 +12,20 @@ targets:
   game: 🎮 游戏平台
   apple_push: ApplePushFallback
 providers:
+  Meta:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/classical/meta.yaml
+    path: ./ruleset/Meta.yaml
+    interval: 86400
+  Comic18:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/classical/18comic.yaml
+    path: ./ruleset/Comic18.yaml
+    interval: 86400
   Nvidia:
     type: http
     behavior: classical
@@ -124,13 +138,13 @@ groups:
   - stash
 rules:
 - id: comic18_tw
-  type: DOMAIN-KEYWORD
-  value: 18comic
+  type: RULE-SET
+  value: Comic18
   target: tw
-- id: jmcomic_tw
-  type: DOMAIN-KEYWORD
-  value: jmcomic
-  target: tw
+- id: meta_us
+  type: RULE-SET
+  value: Meta
+  target: us
 - id: rule_009
   type: RULE-SET
   value: GoogleVoice
@@ -295,10 +309,6 @@ rules:
   type: DOMAIN-SUFFIX
   value: battlenet.com.cn
   target: direct
-- id: rule_040
-  type: DOMAIN-KEYWORD
-  value: muse
-  target: us
 - id: sooplive_kr
   type: DOMAIN-KEYWORD
   value: sooplive

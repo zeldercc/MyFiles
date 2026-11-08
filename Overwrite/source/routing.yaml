@@ -225,6 +225,38 @@ rules:
   type: RULE-SET
   value: XiaoHongShu
   target: direct
+- id: bili_reject_1
+  type: DOMAIN-SUFFIX
+  value: mcdn.bilivideo.cn
+  target: reject
+- id: bili_reject_2
+  type: DOMAIN-SUFFIX
+  value: mcdn.bilivideo.com
+  target: reject
+- id: bili_reject_3
+  type: DOMAIN-SUFFIX
+  value: szbdyd.com
+  target: reject
+- id: bili_reject_4
+  type: DOMAIN-SUFFIX
+  value: mcdn.bilivideo.net
+  target: reject
+- id: bili_reject_5
+  type: DOMAIN-SUFFIX
+  value: mountaintoys.cn
+  target: reject
+- id: bili_reject_6
+  type: DOMAIN-SUFFIX
+  value: nexusedgeio.com
+  target: reject
+- id: bili_reject_7
+  type: DOMAIN-SUFFIX
+  value: ahdohpiechei.com
+  target: reject
+- id: bili_reject_8
+  type: DOMAIN-SUFFIX
+  value: bvmlt.top
+  target: reject
 - id: rule_019
   type: RULE-SET
   value: BiliBili

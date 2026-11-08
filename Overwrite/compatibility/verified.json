@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-10-24",
+  "reviewed_at": "2026-11-08",
   "versions": {
     "OpenClash": {
       "version_kind": "github_release",
@@ -55,19 +55,19 @@
       "name": "Stash 官方覆写规范",
       "url": "https://stash.wiki/en/configuration/override",
       "mode": "visible_text",
-      "sha256": "b23ec676c666f883cf7f68c77537b93f8a01e38da37d9ec53414fae6f6e093c3"
+      "sha256": "9b2199953c4099964c5e82a3a5e55bae099d2ed06429250f4ecf90da3be1bbf4"
     },
     {
       "name": "Stash 官方规则类型",
       "url": "https://stash.wiki/en/rules/rule-types",
       "mode": "visible_text",
-      "sha256": "40dd9ad3682b7a689a824ef2b0a753c82372da28c7fa69252ea2007040f4d559"
+      "sha256": "19942ee75af6e683dcd5d35df861bb93cc785f3d7aebb4da9a3c679fececdd9d"
     },
     {
       "name": "Stash 官方规则集",
       "url": "https://stash.wiki/en/rules/rule-set",
       "mode": "visible_text",
-      "sha256": "c7eea0dfcfdf22fc569e0fcb7b2bbc9d913f333c239a7e3ca5e8271f091579a8"
+      "sha256": "a7c17f97e3915be1ebd11cf1ec06627d206e24cedd9e45c4f7f81268e5bfea8f"
     },
     {
       "name": "Hako JS 引擎当前源码",

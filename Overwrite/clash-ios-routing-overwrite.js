@@ -1,4 +1,4 @@
-// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 79e37d61371b5c7d54a20dc92f5088d31634a48b56a71efd439d00031d8e6030
+// 自动生成。仅编辑 Overwrite/source/routing.yaml。source-sha256: 8a6884596fea68fc85f597b140d286679fb75553185d6d241fc0983a7c3ac702
 // 每次从原始订阅应用；不要将旧运行配置作为输入。
 function main(config) {
   if (!config || typeof config !== "object" || Array.isArray(config)) {
@@ -159,6 +159,14 @@ function main(config) {
     "RULE-SET,PlayStation,🇭🇰 香港节点",
     "RULE-SET,DouYin,DIRECT",
     "RULE-SET,XiaoHongShu,DIRECT",
+    "DOMAIN-SUFFIX,mcdn.bilivideo.cn,REJECT",
+    "DOMAIN-SUFFIX,mcdn.bilivideo.com,REJECT",
+    "DOMAIN-SUFFIX,szbdyd.com,REJECT",
+    "DOMAIN-SUFFIX,mcdn.bilivideo.net,REJECT",
+    "DOMAIN-SUFFIX,mountaintoys.cn,REJECT",
+    "DOMAIN-SUFFIX,nexusedgeio.com,REJECT",
+    "DOMAIN-SUFFIX,ahdohpiechei.com,REJECT",
+    "DOMAIN-SUFFIX,bvmlt.top,REJECT",
     "RULE-SET,BiliBili,DIRECT",
     "RULE-SET,Bing,🇺🇲 美国节点",
     "RULE-SET,Porn,🇺🇲 美国节点",
